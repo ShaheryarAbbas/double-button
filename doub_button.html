@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Double Button</title>
+</head>
+<body>
+
+  <button onclick="toggleContent()">Double Button</button>
+
+  <div id="content" style="display: none;">
+    <h1>Double Button</h1>
+
+    <p>Starting Number: <span id="number">2</span></p>
+
+    <button onclick="doubleNumber()">Double</button>
+
+    <p>Button clicked <span id="count">0</span> times.</p>
+  </div>
+
+  <script>
+    let number = 2;
+    let count = 0;
+    const content = document.getElementById("content");
+
+    function doubleNumber() {
+      number = number * 2;
+      document.getElementById("number").innerText = number;
+      count = count + 1;
+      document.getElementById("count").innerText = count;
+    }
+
+    function toggleContent() {
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
